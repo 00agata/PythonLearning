@@ -11,14 +11,14 @@ previous and next numbers.
 
 try:
     # Read an integer:
-    integer_ = raw_input("Please, provide sample integer: ")
-    integer_ = int(integer_)
+    integer = raw_input("Please, provide sample integer: ")
+    integer = int(integer)
     # Print previous int:
-    prev_integer_ = integer_ - 1
-    print ("Previous integer: {}").format(prev_integer_)
+    prev_integer = integer - 1
+    print ("Previous integer: {}".format(prev_integer))
     # Print next int:
-    next_integer_ = integer_ + 1
-    print ("Next integer: {}").format(next_integer_)
+    next_integer = integer + 1
+    print ("Next integer: {}".format(next_integer))
     
     
 except ValueError:

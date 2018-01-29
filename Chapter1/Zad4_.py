@@ -10,14 +10,14 @@ previous and next numbers.
 
 
 # Read an integer:
-integer_ = input("Please, provide sample integer: ")
-if '.' in str(integer_):
-    print ("This value is invalid. Program finished.")
-else:  
-    integer_ = int(integer_)
+integer = input("Please, provide sample integer: ")
+if type(integer) == int: 
+    integer = int(integer)
     # Print previous int:
-    prev_integer_ = integer_ - 1
-    print ("Previous integer: {}").format(prev_integer_)
+    prev_integer = integer - 1
+    print ("Previous integer: {}".format(prev_integer))
     # Print next int:
-    next_integer_ = integer_ + 1
-    print ("Next integer: {}").format(next_integer_)
+    next_integer = integer + 1
+    print ("Next integer: {}".format(next_integer))
+else:
+    print ('Invalid Value')

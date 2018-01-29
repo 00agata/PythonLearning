@@ -6,16 +6,10 @@ Created on 28 sty 2018
 
 
 def count_tables_amount (students_amount):
-    table_students = 2 
-    temp = students_amount % table_students
-    if temp > 0:
-        tables_amount = (students_amount // table_students) + 1
-    else:
-        tables_amount = students_amount // table_students
-    return tables_amount
+    return students_amount // 2 + 1
+
 
 students = {}
-
 
 try:
     # Reads how many students:
@@ -35,4 +29,4 @@ try:
         
 except ValueError:
     print ("Provided value is invalid. Program finished.")
-    
+
