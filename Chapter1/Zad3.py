@@ -17,7 +17,7 @@ It should print the two answers for the questions above.
 apples_amount = 0
 students_amount = 0
 
-def divide_fruits ():
+def divide_fruits (apples_amount, students_amount):
     # Checks, if each student will receive at least one apple
     if (apples_amount < students_amount):
         print ("There are not enough apples to divide for all students")
@@ -26,17 +26,17 @@ def divide_fruits ():
         apples_per_student = apples_amount // students_amount
         
         if (apples_per_student == 1):
-            print ("Each student will receive %d apple" % apples_per_student)
+            print ("Each student will receive %d apple".format(apples_per_student))
         else:
-            print ("Each student will receive %d apples" % apples_per_student)
+            print ("Each student will receive %d apples".format(apples_per_student))
              
         # Checks, how man apples are left in the basket
         apples_left = apples_amount % students_amount
         
         if (apples_left ==1):
-            print ("%d apple is left in the basket" % apples_left)
+            print ("%d apple is left in the basket".format(apples_left))
         else:
-            print ("%d apples are left in the basket" % apples_left)
+            print ("%d apples are left in the basket".format(apples_left))
 
 
 try:
