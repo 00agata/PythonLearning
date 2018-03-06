@@ -23,7 +23,7 @@ d = int(input('second cell second parameter: '))
 
 if type(a) == int and type(b) == int and type(c) == int and type(d) == int:
     if 1 <= a <= 8 and 1 <= b <= 8 and 1 <= c <= 8 and 1 <= d <= 8:
-        if (c == a and (d == b+1 or d == b-1)) or (d == b and (c == a+1 or c == a-1)):
+        if c == a or d == b:
             print('YES')
         else:
             print('NO')        

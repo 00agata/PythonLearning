@@ -21,11 +21,10 @@ Warning. The words LEAP and COMMON should be printed all caps.
 
 year = int(input('provide year: '))
 
-if year > 0 and year < 10000000000000:
+if 0 < year < 10000000000000:
     if year % 4 == 0 and year % 100 != 0 or year % 400 == 0:
         print('LEAP')
     else:
         print('COMMON')
 else:
     print('Incorrect input value')
-        

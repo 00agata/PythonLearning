@@ -21,10 +21,10 @@ N_array = []
 n_array = []
 
 if N < 10:
-    for Ns in range (0,N):
+    for Ns in range(1, N+1):
         N_array.append(Ns)
     
-    for Ns in range (1,N):
+    for Ns in range(1, N):
         n = int(input('provide other card\'s number:' ))
         n_array.append(n)
         
@@ -33,5 +33,3 @@ if N < 10:
     print('Lost number is {}'.format(lost_number))
 else:
     print ('Incorrect input value')
-
-

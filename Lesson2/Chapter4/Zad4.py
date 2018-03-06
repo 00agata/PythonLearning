@@ -19,7 +19,7 @@ sum_of_numbers = 0
 N = int(input('How many numbers? '))
 
 if type(N) == int and N > 0:
-    for nums in range (0,N):
+    for nums in range(0, N):
         number = int(input('provide next number: '))
         if type(number) == int:
             sum_of_numbers = sum_of_numbers + number

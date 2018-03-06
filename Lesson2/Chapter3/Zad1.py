@@ -12,9 +12,9 @@ b = int(input('Provide int b:'))
 
 if type(a) == int and type(b) == int:
     if (a == b):
-        print ('Both are equal')
+        print('Both are equal')
     else:
-        print ('Min of {}, {}:'.format(a,b))
-        print (min(a,b))
+        print('Min of {}, {}:'.format(a,b))
+        print(min(a,b))
 else:
-    print ('Incorrect input value')
+    print('Incorrect input value')

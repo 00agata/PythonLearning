@@ -14,7 +14,6 @@ and then the last two - for the second cell.
 
 '''
 
-
 a = int(input('first cell first parameter: '))
 b = int(input('first cell second parameter: '))
 c = int(input('second cell first parameter: '))
@@ -22,17 +21,11 @@ d = int(input('second cell second parameter: '))
 
 if type(a) == int and type(b) == int and type(c) == int and type(d) == int:
     if 1 <= a <= 8 and 1 <= b <= 8 and 1 <= c <= 8 and 1 <= d <= 8:
-        if (a%2 == 0 and b%2 == 0 and c%2 == 0 and d%2 == 0):
-            print('YES')
-        elif (a%2 != 0 and b%2 != 0 and c%2 != 0 and d%2 != 0):
-            print('YES')
-        elif (a%2 == 0 and b%2 == 0 and c%2 != 0 and d%2 != 0):
-            print('YES')
-        elif (a%2 != 0 and b%2 != 0 and c%2 == 0 and d%2 == 0):
+        if (abs(c - a) + abs(d - b)) % 2 == 0:
             print('YES')
         else:
-            print('NO')        
+            print('NO')
     else:
-        print('Incorrect input value') 
+        print('Incorrect input value')
 else:
-    print('Incorrect input value')       
+    print('Incorrect input value')

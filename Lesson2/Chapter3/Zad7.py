@@ -27,7 +27,7 @@ d = int(input('second cell second parameter: '))
 '''
 start: (a,b)
 stop: (c,d)
-Possible movements:
+Possible moves:
 (a,b+1),(a,b-1),
 (a-1,b-1),(a-1,b),(a-1,b+1),
 (a+1,b-1),(a+1,b),(a+1,b+1)
@@ -37,9 +37,8 @@ Possible movements:
 
 if type(a) == int and type(b) == int and type(c) == int and type(d) == int:
     if 1 <= a <= 8 and 1 <= b <= 8 and 1 <= c <= 8 and 1 <= d <= 8:
-        possible_movements = [(a,b+1),(a,b-1),(a-1,b-1),(a-1,b),(a-1,b+1),
-                              (a+1,b-1),(a+1,b),(a+1,b+1)]
-        if (c,d) in possible_movements:
+        if (abs((c - a) * (d - b)) == 0 and (abs(c - a) == 1 or abs(d - b) == 1)) \
+                or abs((c - a) * (d - b)) == 1:
             print('YES')
         else:
             print('NO')

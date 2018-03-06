@@ -17,7 +17,7 @@ n = int(input('provide n < 9:'))
 step = ''
 
 if n <= 9:
-    for nums in range (1,n+1):
+    for nums in range(1, n+1):
         number = str(nums)
         step = step + number 
         print('Step {} is {}'.format(nums, step))

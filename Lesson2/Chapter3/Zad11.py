@@ -16,22 +16,17 @@ The program reads three integers: n, m, and k. It should print YES or NO.
 n = int(input('n: '))
 m = int(input('m: '))
 k = int(input('k: '))
-line = int(input('line: '))
-horizontal_or_vertical = int(input('Set 1 if horizontal, 0 if vertical division: '))
 
-if type(n) == int and type(m) == int and type(k) == int and type(line) == int and type(horizontal_or_vertical) == int:
-    whole_choc = n * m
-    if (horizontal_or_vertical == 1):
-        part_1 = n * (m - line)
-        part_2 = whole_choc - part_1
-        if (part_1 == k or part_2 == k):
+whole_choc = n * m
+
+if k <= whole_choc:
+    if k != 1:
+        if whole_choc % k == 0 or k % n == 0 or k % m == 0:
             print('YES')
         else:
             print('NO')
-    elif (horizontal_or_vertical == 0):
-        part_1 = n * (m - line)
-        part_2 = whole_choc - part_1
-        if (part_1 == k or part_2 == k):
+    else:
+        if whole_choc % k == 0 and (k % n == 0 or k % m == 0):
             print('YES')
         else:
             print('NO')

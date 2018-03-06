@@ -13,7 +13,7 @@ A = int(input('please, provide A: '))
 B = int(input('please, provide B, B > A'))
 
 if type(A) == int and type(B) == int and A <= B:
-    for numbers in range (A,B+1):
+    for numbers in range(A-1, B+1):
         print (numbers)
 else:
     print('Incorrect input value. Check, if A <=B ')

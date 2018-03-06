@@ -14,10 +14,10 @@ B = int(input('please, provide B: '))
 
 if type(A) == int and type(B) == int:
     if A <= B:
-        for numbers in range (A,B+1):
+        for numbers in range(A, B+1):
             print (numbers)
     elif A > B:
-        for numbers in range (B,A+1):
+        for numbers in range(A, B-1, -1):
             print (numbers)
 else:
-    print('Incorrect input value. Check, if A <=B ')
+    print('Incorrect input value.')

@@ -16,7 +16,7 @@ N = int(input('N '))
 sum_of_zeros = 0
 
 if type(N) == int and N > 0:
-    for nums in range (0,N):
+    for nums in range(0, N):
         number = int(input('provide next number: '))
         if type(number) == int:
             if number == 0:

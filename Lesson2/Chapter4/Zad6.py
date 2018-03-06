@@ -11,7 +11,7 @@ N = int(input('Factorial N? '))
 factorial = 1
 
 if type(N) == int and N > 0:
-    for nums in range (1,N+1):
+    for nums in range(1, N+1):
         factorial = factorial * nums
     print('N factorial is : {}'.format(factorial))
 else:

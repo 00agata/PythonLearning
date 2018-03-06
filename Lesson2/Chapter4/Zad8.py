@@ -15,7 +15,7 @@ n = int(input('provide n:'))
 s = 0
 i = 1
 
-for nums in range (1,n+1):
+for nums in range(1, n+1):
     i = i * nums
     s = s + i
     print('Current factorial: {}'.format(i))
