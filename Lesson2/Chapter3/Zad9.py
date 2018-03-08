@@ -38,7 +38,7 @@ if type(a) == int and type(b) == int and type(c) == int and type(d) == int:
     if 1 <= a <= 8 and 1 <= b <= 8 and 1 <= c <= 8 and 1 <= d <= 8:
         if a == c or b == d:
             print('YES')
-        elif c - a == d - b:
+        elif abs(c - a) == abs(d - b):
             print('YES')
         else:
             print('NO')

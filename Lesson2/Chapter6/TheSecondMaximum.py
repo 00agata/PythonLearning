@@ -8,9 +8,7 @@ It is guaranteed that the sequence has at least two elements.
 '''
 
 
-'''
-provide sequence of numbers
-'''
+# provide sequence of numbers
 
 
 int_sequence = raw_input('provide integer numbers sequence: ')
@@ -22,17 +20,15 @@ for chars in range (0,char_num):
 int_table.append(0)
 
 print('Numbers sequence:')
-for nums in int_table:
-    print nums
+for num in int_table:
+    print(num)
 
 
-'''
-find second maximum
-'''
+# find second maximum
 
 
 int_table.sort()
 print('Sorted numbers sequence:')
-for nums in int_table:
-    print nums
+for num in int_table:
+    print(num)
 print('Second maximum: {}'.format(int_table[(char_num - 1):(-1)]))

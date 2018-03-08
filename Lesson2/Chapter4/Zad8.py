@@ -15,8 +15,8 @@ n = int(input('provide n:'))
 s = 0
 i = 1
 
-for nums in range(1, n+1):
-    i = i * nums
+for num in range(1, n+1):
+    i = i * num
     s = s + i
     print('Current factorial: {}'.format(i))
 print('Sum o factorials: {}'.format(s))

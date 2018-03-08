@@ -5,9 +5,7 @@ its largest element.
 '''
 
 
-'''
-provide sequence of numbers
-'''
+# provide sequence of numbers
 
 
 int_sequence = raw_input('provide integer numbers sequence: ')
@@ -18,9 +16,8 @@ for chars in range(0, char_num):
     int_table.append(int(int_sequence[chars]))
 int_table.append(0)
 
-'''
-find maximum value
-'''
+
+# find maximum value
 
 
 amount_of_max_equal = 0

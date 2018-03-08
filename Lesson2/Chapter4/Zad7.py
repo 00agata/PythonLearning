@@ -20,7 +20,7 @@ if type(N) == int and N > 0:
         number = int(input('provide next number: '))
         if type(number) == int:
             if number == 0:
-                sum_of_zeros = sum_of_zeros + 1
+                sum_of_zeros += 1
         else:
             print('Invalid value')
             

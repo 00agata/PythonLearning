@@ -15,9 +15,9 @@ B = int(input('please, provide B: '))
 if type(A) == int and type(B) == int:
     if A <= B:
         for numbers in range(A, B+1):
-            print (numbers)
+            print(numbers)
     elif A > B:
         for numbers in range(A, B-1, -1):
-            print (numbers)
+            print(numbers)
 else:
     print('Incorrect input value.')

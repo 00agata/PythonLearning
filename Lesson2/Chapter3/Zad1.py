@@ -14,7 +14,7 @@ if type(a) == int and type(b) == int:
     if (a == b):
         print('Both are equal')
     else:
-        print('Min of {}, {}:'.format(a,b))
-        print(min(a,b))
+        print('Min of {}, {}:'.format(a, b))
+        print(min(a, b))
 else:
     print('Incorrect input value')
