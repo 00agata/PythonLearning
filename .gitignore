@@ -1,6 +1,4 @@
 /.metadata/
-/.idea/
-/Chapter8/
-/AtBS/
+**/.idea/
 *.pydevproject
 *.project
