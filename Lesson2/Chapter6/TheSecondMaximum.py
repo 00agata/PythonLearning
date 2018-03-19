@@ -15,7 +15,7 @@ int_sequence = raw_input('provide integer numbers sequence: ')
 int_sequence = str(int_sequence)
 char_num = len(int_sequence)
 int_table = []
-for chars in range (0,char_num):
+for chars in range(0,char_num):
     int_table.append(int(int_sequence[chars]))
 int_table.append(0)
 
@@ -27,8 +27,5 @@ for num in int_table:
 # find second maximum
 
 
-int_table.sort()
-print('Sorted numbers sequence:')
-for num in int_table:
-    print(num)
-print('Second maximum: {}'.format(int_table[(char_num - 1):(-1)]))
+int_table.remove(max(int_table))
+print('Second maximum: {}'.format(max(int_table)))

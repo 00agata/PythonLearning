@@ -22,10 +22,6 @@ d = int(input('second cell second parameter: '))
 '''
 start: (a,b)
 stop: (c,d)
-Possible movements:
-(a-1,b-2),(a-1,b+2),(a+1,b+2),(a+1,b-2)
-(a-2,b-1),(a-2,b+1),(a+2,b+1),(a+2,b-1)
-
 '''
 
 

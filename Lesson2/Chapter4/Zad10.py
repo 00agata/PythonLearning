@@ -17,19 +17,19 @@ Find and print the number on the lost card.
 
 
 N = int(input('provide N < 10'))
-N_array = []
-n_array = []
+all_cards = []
+remaining_cards = []
 
 if N < 10:
-    for Ns in range(1, N+1):
-        N_array.append(Ns)
+    for number in range(1, N+1):
+        all_cards.append(number)
     
-    for Ns in range(1, N):
+    for number in range(1, N):
         n = int(input('provide other card\'s number:' ))
-        n_array.append(n)
-        
-    lost_number = list(set(N_array) - set(n_array))[0]
+        remaining_cards.append(n)
+
+    lost_card = [card for card in all_cards if card not in remaining_cards]
     
-    print('Lost number is {}'.format(lost_number))
+    print('Lost number is {}'.format(lost_card[0]))
 else:
     print ('Incorrect input value')
