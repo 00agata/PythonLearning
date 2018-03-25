@@ -1,6 +1,7 @@
 import unittest
 
 
+# function to be tested - from Lesson3
 def collatz(number):
     result = 0
     if number % 2 == 0:
@@ -14,12 +15,14 @@ def collatz(number):
 class TestCollatz(unittest.TestCase):
 
     def test_if_expected_value(self):
-        print(self.assertEqual(collatz(8), 4, 'passed'))
-        print(self.assertEqual(collatz(5), 16, 'passed'))
+        print('Test, if collatz(number) function will '
+              'return expected value')
+        print(self.assertEqual(collatz(8), 4, 'failed'))
+        print(self.assertEqual(collatz(5), 16, 'failed'))
 
     def test_input_value(self):
-        # check that collatz(number) fails when the argument is not a number
-
+        print('Test that collatz(number) fails when the argument '
+              'is not a number')
         with self.assertRaises(TypeError):
             collatz('aoeu')
 
