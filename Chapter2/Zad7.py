@@ -15,21 +15,15 @@ For example, if N = 150, then 150 minutes have passed since midnight
 '''
 
 
-minutes_since_midnight = int(input('Please, provide the number of minutes since midnight: ' ))
+minutes_since_midnight = int(input('Please, provide the number of minutes since midnight: '))
 if type(minutes_since_midnight) == int and minutes_since_midnight > 0:
     hours = int(minutes_since_midnight / 60)
+    hours = hours % 24
     minutes_rest = minutes_since_midnight % 60
     if minutes_rest < 10:
         minutes_rest = str(minutes_rest)
         minutes_rest = '0' + minutes_rest
-    if hours < 24:
-        print('Current time is {}:{}'.format(hours, minutes_rest))
-    elif hours == 24:
-        print('Current time is 00:{}'.format(minutes_rest))
-    elif hours > 24:
-        day = 24*60
-        days = int(minutes_since_midnight/day)
-        hours = (minutes_since_midnight - days * day)/60
+
         print('Current time is {}:{}'.format(hours, minutes_rest))
 else:
     print('Incorrect input value')

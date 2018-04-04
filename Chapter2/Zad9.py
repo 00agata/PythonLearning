@@ -13,13 +13,10 @@ H = int(input('Provide hours:'))
 M = int(input('Provide minutes:'))
 S = int(input('Provide seconds:'))
 
-if S > 60:
-    M = M + S/60
-    S = S % 60
-
-if M > 60:
-    H = H + M/60
-    M = M % 60
+M = M + S/60
+S = S % 60
+H = H + M/60
+M = M % 60
 
 H = H % 12
 
