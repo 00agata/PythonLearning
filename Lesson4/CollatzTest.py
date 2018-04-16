@@ -17,8 +17,8 @@ class TestCollatz(unittest.TestCase):
     def test_if_expected_value(self):
         print('Test, if collatz(number) function will '
               'return expected value')
-        print(self.assertEqual(collatz(8), 4, 'failed'))
-        print(self.assertEqual(collatz(5), 16, 'failed'))
+        print(self.assertEqual(collatz(8), 4, 'Invalid output value'))
+        print(self.assertEqual(collatz(5), 16, 'Invalid output value'))
 
     def test_input_value(self):
         print('Test that collatz(number) fails when the argument '
