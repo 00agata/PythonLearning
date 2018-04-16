@@ -18,12 +18,17 @@ spam = []
 
 
 def comma_code(spam):
-    spam_string = ", ".join(spam[:-1])
-    spam_string = spam_string + ' and ' + spam[-1]
-    return spam_string
+    if spam is None:
+        raise TypeError
+    else:
+        spam_string = ", ".join(spam[:-1])
+        spam_string = spam_string + ' and ' + spam[-1]
+        return spam_string
 
 
 spam = ['ala', 'ola', 'ula']
 
 joined_string_from_the_list = comma_code(spam)
 print(joined_string_from_the_list)
+
+
