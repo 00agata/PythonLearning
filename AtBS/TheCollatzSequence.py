@@ -11,23 +11,21 @@ def collatz(number):
     result = 0
     if number % 2 == 0:
         result = number // 2
-        return result
+        print(result)
     else:
         result = 3 * number + 1
-        return result
+        print(result)
 
 
 try:
     user_number = input('Provide sample integer: ')
     user_number = int(user_number)
 
+    print('Type of user input:')
     print(type(user_number))
-
-    collatz_result = collatz(user_number)
-    print('Current collatz result is: {}'.format(collatz_result))
-    while collatz_result != 1:
-        collatz_result = collatz(collatz_result)
-        print('Current collatz result is: {}'.format(collatz_result))
+    print()
+    print('Current collatz result is: ')
+    collatz(user_number)
 
 except NameError:
     print('Incorrect input value')

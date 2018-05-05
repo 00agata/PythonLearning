@@ -10,8 +10,13 @@ Don't use the same function from the standard library.
 
 
 def power(a, n):
-    result = a**n
-    return result
+    if a > 0 and n >= 0:
+        result = 1
+        for i in range(0, n):
+            result *= a
+        return result
+    else:
+        raise ValueError
 
 
 try:
@@ -19,5 +24,5 @@ try:
     n = int(input('Input n: '))
     power_a_n = power(a, n)
     print('a^n: {}'.format(power_a_n))
-except NameError:
+except (NameError, ValueError):
     print ('Incorrect Input Value. Program finished')
