@@ -14,16 +14,16 @@ But your function should be able to work with any list value passed to it.
 '''
 
 
-spam = []
+import unittest
 
 
 def comma_code(spam):
-    if spam is None:
-        raise TypeError
-    else:
+    if spam is not None:
         spam_string = ", ".join(spam[:-1])
         spam_string = spam_string + ' and ' + spam[-1]
         return spam_string
+    else:
+        raise TypeError
 
 
 spam = ['ala', 'ola', 'ula']
@@ -32,3 +32,14 @@ joined_string_from_the_list = comma_code(spam)
 print(joined_string_from_the_list)
 
 
+class TestCommaCode(unittest.TestCase):
+
+    def test_if_expected_exception(self):
+        print('Test, if exception will be raised,\
+        if input value is an int')
+
+        with self.assertRaises(TypeError):
+            comma_code('ala')
+
+    if __name__ == '__main__':
+        +    unittest.main()

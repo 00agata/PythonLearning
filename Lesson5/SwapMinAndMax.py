@@ -18,3 +18,5 @@ def swap_min_and_max_from_the_list(sample_list):
 
 
 swap_min_and_max_from_the_list(sample_list)
+sample_list = [0, 0, 0, 0, 0, 0, 0]
+swap_min_and_max_from_the_list(sample_list)
