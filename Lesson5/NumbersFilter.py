@@ -15,4 +15,4 @@ def filter_numbers(string_list, filter):
     print filtered_list
 
 
-filter_numbers(['2', '3', '5', '6'], 3)
+filter_numbers(['-2', '3', '5', '6'], 3)
