@@ -13,27 +13,28 @@ tableData = [['apples', 'oranges', 'cherries', 'bobs'],
 
 
 def print_table(tableData):
-    colWidths = [0] * len(tableData)
-    idColWidths = len(colWidths) +1
-    max_str = []
-    for i in range(1, (len(tableData[0])+1)):
-        for k in range(1, idColWidths):
-            max_str.append([tableData[k-1][i-1]])
-        colWidths.append(max([len(item) for item in max_str]))
-        max_str = []
+    rowAmount = []
+    newRow = []
+    for n in range(1, len(tableData)+1):
+        rowAmount.append((max([len(str(item)) for item in tableData[n-1]])))
 
-    for i in range(1, len(tableData[0])+1):
-        for j in range(1, idColWidths):
-            val = tableData[j-1][i-1]
-            if(j == 1):
-                val = val.ljust((colWidths[j-1] - len(val)), ' ')
+    for i in range(1, (len(tableData[0])+1)):
+        for k in range(1, len(tableData)+1):
+            newRow.append([tableData[k-1][i-1]])
+        for j in range(1, len(newRow)+1):
+            for item in newRow[j-1]:
+                val = item
+            if (j == 1):
+                val = val.rjust((rowAmount[j - 1]), ' ')
                 print(val, end=" ")
-            elif(j == idColWidths + 1):
-                val = val.rjust((colWidths[j-1] - len(val)), ' ')
+            elif (j == len(newRow)+1):
+                val = val.rjust((rowAmount[j - 1]), ' ')
                 print(val)
             else:
-                val = val.center((colWidths[j-1] - len(val)), ' ')
+                val = val.center((rowAmount[j - 1]), ' ')
                 print(val, end=" ")
+        print()
+        newRow = []
 
 
 print_table(tableData)
