@@ -13,12 +13,14 @@ def email_validator(sample_email):
          [a-zA-Z0-9.-]+         # domain name
            (\.[a-zA-Z]{2,4})    # dot-something
            )''', re.VERBOSE)
-    mo = emailRegex.search(sample_email)
+    mo = emailRegex.match(sample_email)
     if mo is not None:
-        print(mo.group())
         print('Email address is valid')
+        print(mo.group())
+        return True
     else:
         print('Email address is not valid')
+        return False
 
 
-email_validator(sample_email)
+print(email_validator(sample_email))

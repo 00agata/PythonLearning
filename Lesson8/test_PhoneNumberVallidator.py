@@ -1,10 +1,7 @@
-'''
-Phone number validator - write phone number validator
-that accepts phone numbers in not separated,
-space-separated or hypen-separated 9-digit
-format with optional country prefix
-'''
+# in order to test PhoneNumberValidator
 
+
+import pytest
 import re
 
 sample_phone_number = '0048 123 456 789'
@@ -30,4 +27,16 @@ def phone_number_validator(sample_phone_number):
         return False
 
 
-print(phone_number_validator(sample_phone_number))
+def test_phone_number_validator():
+    print('Test zero length')
+    assert phone_number_validator(0, 0, 0, 0) == 0
+    print('Test negative coordinates')
+    assert phone_number_validator(-1, -1, -4, -6) == 2
+    print('Test vertical distance')
+    assert phone_number_validator(0, 0, 4, 6) == 2
+    print('Test horizontal distance')
+    assert phone_number_validator(4, 6, 0, 0) == 2
+    print('Test normal conditions - difference on both coordinates')
+    assert phone_number_validator(4, 6, 1, 0) == math.sqrt((6-4)**2 + (0-1)**2)
+    print('Test that the order of points does not matter')
+    assert phone_number_validator(6, 4, 1, 0) == distance_between_points(4, 6, 1, 0)

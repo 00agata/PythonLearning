@@ -14,32 +14,35 @@ sample_pasword = 'alamaZkota123'
 
 
 def validate_password(sample_password):
+
     # check length:
-    if len(sample_password) >= 8:
-        # check, if contains lowercase letters
-        new_regex = re.compile(r'[+a-z]')
-        mo = new_regex.search(sample_pasword)
-        if mo is not None:
-            print(mo.group())
-            # check, if contains uppercase letters
-            new_regex = re.compile(r'[+A-Z]')
-            mo = new_regex.search(sample_pasword)
-            if mo is not None:
-                print(mo.group())
-                # check, if contains digits
-                new_regex = re.compile(r'[+\d]')
-                mo = new_regex.search(sample_pasword)
-                if mo is not None:
-                    print(mo.group())
-                    print('Password is strong enough')
-                else:
-                    print('Password does not contain any digits')
-            else:
-                print('Password does not contain uppercase letters')
-        else:
-            print('Password does not contain small letters')
-    else:
+    if len(sample_password) < 8:
         print('Password is too short')
+        return False
+
+    # check, if contains lowercase letters
+    new_regex = re.compile(r'[+a-z]')
+    mo = new_regex.search(sample_pasword)
+    if mo is None:
+        print('Password does not contain small letters')
+        return False
+
+    # check, if contains uppercase letters
+    new_regex = re.compile(r'[+A-Z]')
+    mo = new_regex.search(sample_pasword)
+    if mo is None:
+        print('Password does not contain uppercase letters')
+        return False
+
+    # check, if contains digits
+    new_regex = re.compile(r'[+\d]')
+    mo = new_regex.search(sample_pasword)
+    if mo is not None:
+        print('Password is strong enough')
+        return True
+    else:
+        print('Password does not contain any digits')
+        return False
 
 
-validate_password(sample_pasword)
+print(validate_password(sample_pasword))

@@ -16,10 +16,10 @@ def strip(sample_string, *args):
         for inputs in args:
             new_regex = re.compile(r'{}'.format(inputs))
             sample_string = (new_regex.sub(r'', '{}'.format(sample_string)))
-        print(sample_string)
+        return sample_string
     else:
         new_regex = re.compile(r'\s')
-        print(new_regex.sub(r'', '{}'.format(sample_string)))
+        return new_regex.sub(r'', '{}'.format(sample_string))
 
 
-strip('Ala ma kota')
+print(strip('Ala ma      kota'))
