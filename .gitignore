@@ -2,3 +2,6 @@
 **/.idea/
 *.pydevproject
 *.project
+/venv/
+.pytest_cache/
+**/__pycache__/
