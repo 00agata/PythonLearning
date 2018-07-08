@@ -18,11 +18,11 @@ def logger_wrapper(fun, *args, **kwargs):
     for arg in args:
         print(arg)
     print('kwargs: ')
-    for kwarg in kwargs:
-        print(kwarg)
+    for kwarg_key, kwarg_value in kwargs.items():
+        print(kwarg_key, ":", kwarg_value)
 
     print('Executing function started')
     fun(*args, **kwargs)
 
 
-logger_wrapper(foo, 1, 2, third = 3)
+logger_wrapper(foo, 1, 2, third=3)

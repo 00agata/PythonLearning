@@ -1,4 +1,6 @@
 /.metadata/
 **/.idea/
+**.pytest_cache/
+**venv/
 *.pydevproject
 *.project

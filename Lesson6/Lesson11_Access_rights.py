@@ -28,25 +28,37 @@ file_system = {
     'file3': ['W']
 }
 
+
+def file_explorer():
+    while True:
+        # take the file name or exit command:
+        file_name = str(input('File name: '))
+
+        if file_name == "help":
+            print("exit - in order to finish the program\
+            \r\nhelp - in order to help\r\n")
+            file_explorer()
+
+        if file_name == "exit":
+            break
+
+        if file_name in file_system.keys():
+            file_actions = file_system[file_name]
+
+            # take the action
+            file_action = str(input('Action: '))
+
+            if file_action in file_actions:
+                print('OK')
+            else:
+                print('Access denied')
+
+        else:
+            print('Access denied')
+
+
 # print available files:
 print('File system content: ')
 for file in file_system.keys():
     print(file)
-
-while True:
-    # take the file name:
-    file_name = str(input('File name: '))
-
-    if file_name in file_system.keys():
-        file_actions = file_system[file_name]
-
-        # take the action
-        file_action = str(input('Action: '))
-
-        if file_action in file_actions:
-            print('OK')
-        else:
-            print('Access denied')
-
-    else:
-        print('Access denied')
+file_explorer()
