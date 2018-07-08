@@ -5,18 +5,22 @@ displays the result in human readable format
 '''
 
 
-import time
 import datetime
+from datetime import timedelta
+from datetime import date
+from datetime import datetime
 
 
-def calculate_date(yr, days, hr, min):
-    timestamp = int(time.time())
-    if yr % 4 == 0:
-        added_seconds = (yr * 366 * 24 * 60  + hr * 60 + min) * 60
-    else:
-        added_seconds = (yr * 365 * 24 * 60 + hr * 60 + min) * 60
-    requested_timestamp = timestamp + added_seconds
-    print(time.ctime(int(requested_timestamp)))
+def calculate_date(yr, days, hours, minutes):
+    today = date.today()
+
+    custom_date = today.replace(year=today.year + yr)
+    del_time = timedelta(days + (hours/24) + (minutes/(60*24)))
+    custom_date = custom_date + del_time
+
+    timestamp = custom_date.ctime()
+
+    print(timestamp)
 
 
-calculate_date(1, 0, 0, 0)
+calculate_date(1, 1, 5, 0)
