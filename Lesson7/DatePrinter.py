@@ -3,8 +3,9 @@ Date printer - write a script that displays current date
 in human-readable format
 '''
 
-print('First way: ')
 import datetime
+
+print('First way: ')
 today = datetime.date.today()
 print(today)
 

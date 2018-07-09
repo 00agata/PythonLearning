@@ -5,7 +5,6 @@ current date and custom date in the future.
 '''
 
 
-import time
 import datetime
 
 
@@ -31,9 +30,6 @@ def calculate_delta_for_date(custom_date):
     delta = now - my_other_datetime
     delta_total_seconds = abs(int(delta.total_seconds()))
 
-    # print(now)
-    # print(my_other_datetime)
-    # print(delta_total_seconds)
     return delta_total_seconds
 
 

@@ -13,8 +13,8 @@ def swap_words_in_two_word_string(sample_string_two_words_with_space):
     list_str_2 = []
     list_str_2.append(list_str[1])
     list_str_2.append(list_str[0])
-    str = ' '.join(list_str_2)
-    return str
+    sample_str = ' '.join(list_str_2)
+    return sample_str
 
 
 print(swap_words_in_two_word_string(sample_string_two_words))

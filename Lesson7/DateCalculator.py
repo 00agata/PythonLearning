@@ -7,20 +7,16 @@ displays the result in human readable format
 
 import datetime
 from datetime import timedelta
-from datetime import date
-from datetime import datetime
 
 
 def calculate_date(yr, days, hours, minutes):
-    today = date.today()
+    today = datetime.date.today()
 
     custom_date = today.replace(year=today.year + yr)
     del_time = timedelta(days + (hours/24) + (minutes/(60*24)))
     custom_date = custom_date + del_time
 
-    timestamp = custom_date.ctime()
-
-    print(timestamp)
+    print(custom_date)
 
 
 calculate_date(1, 1, 5, 0)
