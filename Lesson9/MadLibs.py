@@ -30,7 +30,6 @@ to a new text file.
 
 
 import os
-from os import path
 
 
 def prompt_substitute(word_to_substitute):
@@ -50,7 +49,7 @@ def prompt_substitute(word_to_substitute):
         return None
 
 
-def get_valid_file_name():
+def get_valid_file_path():
     while True:
         file_path = str(input('Please, provide file path: '))
         if os.path.isfile(file_path) is True:
@@ -65,24 +64,48 @@ def open_file(file_path):
 
 def read_data_from_the_file(file_to_modify, offset):
     file_to_modify.seek(offset)
-    data_line = file_to_modify.read(1024)
-    return data_line
+    data_read = file_to_modify.read(1024)
+    return data_read
 
 
-def write_data_to_the_file(new_file, data, offset):
+def write_data_to_the_file(new_file, data_write, offset):
     new_file.seek(offset)
-    amount_of_characters = new_file.write(data)
+    amount_of_characters = new_file.write(data_write)
     return amount_of_characters
 
 
-def parse_data(data, word):
-    data_list = data.split()
+def parse_data(data_to_search, word):
     while True:
-        if word in data_list:
-            idx = data_list.index(word)
+        if word in data_to_search:
+            idx = data_to_search.index(word)
             new_word = prompt_substitute(word)
-            data_list[idx] = new_word
+            data_to_search = data_to_search[0:idx] + new_word + data_to_search[(idx+len(new_word)):]
         else:
-            return data_list
+            return data_to_search
             break
+
+# start script
+
+
+words = ['ADJECTIVE', 'ADVERB', 'NOUN', 'VERB']
+
+
+file_path = get_valid_file_path()
+path, file = os.path.split(file_path)
+new_file = path.append('new' + file)
+file_to_modify = open_file()
+file_size = os.path.getsize(file_to_modify)
+if file_size <= 1024:
+    our_data = read_data_from_the_file(file_to_modify, 0)
+    for word in words:
+        our_data = parse_data(our_data, word)
+    write_data_to_the_file(new_file, our_data, 0)
+else:
+    part = file_size/1024
+    for i in range(0, part):
+        our_data = read_data_from_the_file(file_to_modify, part*1024)
+        for word in words:
+            our_data = parse_data(our_data, word)
+        write_data_to_the_file(new_file, our_data, part*1024)
+        
 
