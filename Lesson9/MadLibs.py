@@ -33,6 +33,23 @@ import os
 from os import path
 
 
+def prompt_substitute(word_to_substitute):
+    if word_to_substitute is 'ADJECTIVE':
+        new_word = str(input('Enter adjective: '))
+        return new_word
+    elif word_to_substitute is 'NOUN':
+        new_word =  str(input('Enter noun: '))
+        return new_word
+    elif word_to_substitute is 'ADVERB':
+        new_word = str(input('Enter adverb: '))
+        return new_word
+    elif word_to_substitute is 'VERB':
+        new_word =  str(input('Enter verb: '))
+        return new_word
+    else:
+        return None
+
+
 def get_valid_file_name():
     while True:
         file_path = str(input('Please, provide file path: '))
@@ -46,5 +63,26 @@ def open_file(file_path):
     return file_to_modify
 
 
-def parse_file(file_to_modify):
-    file_to_modify.
+def read_data_from_the_file(file_to_modify, offset):
+    file_to_modify.seek(offset)
+    data_line = file_to_modify.read(1024)
+    return data_line
+
+
+def write_data_to_the_file(new_file, data, offset):
+    new_file.seek(offset)
+    amount_of_characters = new_file.write(data)
+    return amount_of_characters
+
+
+def parse_data(data, word):
+    data_list = data.split()
+    while True:
+        if word in data_list:
+            idx = data_list.index(word)
+            new_word = prompt_substitute(word)
+            data_list[idx] = new_word
+        else:
+            return data_list
+            break
+
