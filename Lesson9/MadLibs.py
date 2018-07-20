@@ -92,9 +92,11 @@ words = ['ADJECTIVE', 'ADVERB', 'NOUN', 'VERB']
 
 file_path = get_valid_file_path()
 path, file = os.path.split(file_path)
-new_file = path.append('new' + file)
-file_to_modify = open_file()
-file_size = os.path.getsize(file_to_modify)
+new_file_path = '/home/agata/PythonLearning/testfile1.txt'
+    #path + 'new' + file
+new_file = open(new_file_path, 'w+')
+file_to_modify = open_file(file_path)
+file_size = os.path.getsize(file_path)
 if file_size <= 1024:
     our_data = read_data_from_the_file(file_to_modify, 0)
     for word in words:
@@ -107,5 +109,5 @@ else:
         for word in words:
             our_data = parse_data(our_data, word)
         write_data_to_the_file(new_file, our_data, part*1024)
-        
+
 
