@@ -79,10 +79,11 @@ def parse_data(data_to_search, word):
         if word in data_to_search:
             idx = data_to_search.index(word)
             new_word = prompt_substitute(word)
-            data_to_search = data_to_search[0:idx] + new_word + data_to_search[(idx+len(new_word)):]
+            data_to_search = data_to_search[0:idx] + new_word + data_to_search[(idx+len(word)):]
         else:
             return data_to_search
             break
+
 
 # start script
 
@@ -91,12 +92,19 @@ words = ['ADJECTIVE', 'ADVERB', 'NOUN', 'VERB']
 
 
 file_path = get_valid_file_path()
+
 path, file = os.path.split(file_path)
-new_file_path = '/home/agata/PythonLearning/testfile1.txt'
-    #path + 'new' + file
+
+new_file_name = 'new'+file
+
+new_file_path = os.path.join(path, new_file_name)   # '/home/agata/PythonLearning/testfile1.txt'
+
 new_file = open(new_file_path, 'w+')
+
 file_to_modify = open_file(file_path)
+
 file_size = os.path.getsize(file_path)
+
 if file_size <= 1024:
     our_data = read_data_from_the_file(file_to_modify, 0)
     for word in words:
@@ -104,6 +112,10 @@ if file_size <= 1024:
     write_data_to_the_file(new_file, our_data, 0)
 else:
     part = file_size/1024
+    if type(part) == 'int':
+        pass
+    else:
+        part = file_size//1024 + 1
     for i in range(0, part):
         our_data = read_data_from_the_file(file_to_modify, part*1024)
         for word in words:
