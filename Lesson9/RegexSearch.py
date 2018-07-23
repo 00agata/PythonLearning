@@ -26,14 +26,14 @@ def get_list_of_the_files_in_given_directory(my_path):
 
 def get_valid_regex():
     while True:
-        reg_ex = str(input('Please, provide valid regex: '))
+        reg_ex = (input('Please, provide valid regex: '))
         try:
-            re.compile(reg_ex)
+            reg = re.compile(reg_ex)
             is_valid = True
         except re.error:
             is_valid = False
         if is_valid is True:
-            return reg_ex
+            return reg
             break
 
 
@@ -50,15 +50,20 @@ def read_data_from_the_file(file, offset):
 # start script
 
 
-dir_path = get_valid_directory_path_to_search()
+#dir_path = get_valid_directory_path_to_search()
+dir_path = os.path.join('D:\\','PythonLearn','PythonLearning','test')
 files_list = get_list_of_the_files_in_given_directory(dir_path)
 
 reg_ex = get_valid_regex()
 
 for file in files_list:
-    file_size = file_size = os.path.getsize(file)
+
+    file_path = os.path.join(dir_path, file)
+    file_size = os.path.getsize(file_path)
+    file_object = open_file(file_path)
+
     if file_size <= 1024:
-        our_data = read_data_from_the_file(file, 0)
+        our_data = read_data_from_the_file(file_object, 0)
         mo = reg_ex.search(our_data)
         if mo is None:
             pass
@@ -72,7 +77,7 @@ for file in files_list:
         else:
             part = file_size//1024 + 1
         for i in range(0, part):
-            our_data = read_data_from_the_file(file, part*1024)
+            our_data = read_data_from_the_file(file_object, part*1024)
             mo = reg_ex.search(our_data)
             if mo is None:
                 pass
