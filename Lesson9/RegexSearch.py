@@ -44,7 +44,8 @@ def get_valid_regex():
 dir_path = os.path.join('D:\\','PythonLearn','PythonLearning','test')
 files_list = get_list_of_the_files_in_given_directory(dir_path)
 
-#pattern = get_valid_regex()
+
+##
 pattern = re.compile(r'''(
         (\+\d{0,2}|00[0-9]{0,2})?     # area code
         (\s|-|\.)?                    # separator
@@ -54,11 +55,12 @@ pattern = re.compile(r'''(
         (\s|-|\.)?                    # separator
         \d{3}                         # last 3 digits
         )''', re.VERBOSE)
+## '(\+\d{0,2}|00[0-9]{0,2})?(\s|-|\.)?\d{3}(\s|-|\.)?\d{3}(\s|-|\.)?\d{3}'
 
+pattern = get_valid_regex()
 for file in files_list:
     file_path = os.path.join(dir_path, file)
     file_itself = open(file_path,'r')
     file_content = file_itself.read()
-        #line = '0048 123 456 789'
     for match in re.finditer(pattern, file_content):
         print('Found on line: {}'.format(match.group()))
