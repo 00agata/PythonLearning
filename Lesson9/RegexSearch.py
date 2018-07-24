@@ -37,16 +37,6 @@ def get_valid_regex():
             break
 
 
-def open_file(file_path):
-    file = open(file_path)
-    return file
-
-
-def read_data_from_the_file(file, offset):
-    file.seek(offset)
-    data_read = file.read(1024)
-    return data_read
-
 # start script
 
 
@@ -54,33 +44,21 @@ def read_data_from_the_file(file, offset):
 dir_path = os.path.join('D:\\','PythonLearn','PythonLearning','test')
 files_list = get_list_of_the_files_in_given_directory(dir_path)
 
-reg_ex = get_valid_regex()
+#pattern = get_valid_regex()
+pattern = re.compile(r'''(
+        (\+\d{0,2}|00[0-9]{0,2})?     # area code
+        (\s|-|\.)?                    # separator
+        \d{3}                         # first 3 digits
+        (\s|-|\.)?                    # separator
+        \d{3}                         # second 3 digits
+        (\s|-|\.)?                    # separator
+        \d{3}                         # last 3 digits
+        )''', re.VERBOSE)
 
 for file in files_list:
-
     file_path = os.path.join(dir_path, file)
-    file_size = os.path.getsize(file_path)
-    file_object = open_file(file_path)
-
-    if file_size <= 1024:
-        our_data = read_data_from_the_file(file_object, 0)
-        mo = reg_ex.search(our_data)
-        if mo is None:
-            pass
-        else:
-            for o in mo:
-                print(o)
-    else:
-        part = file_size/1024
-        if type(part) == 'int':
-            pass
-        else:
-            part = file_size//1024 + 1
-        for i in range(0, part):
-            our_data = read_data_from_the_file(file_object, part*1024)
-            mo = reg_ex.search(our_data)
-            if mo is None:
-                pass
-            else:
-                for o in mo:
-                    print(o)
+    file_itself = open(file_path,'r')
+    file_content = file_itself.read()
+        #line = '0048 123 456 789'
+    for match in re.finditer(pattern, file_content):
+        print('Found on line: {}'.format(match.group()))
