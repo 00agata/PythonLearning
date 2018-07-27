@@ -26,7 +26,7 @@ def get_list_of_the_files_in_given_directory(my_path):
 
 def get_valid_regex():
     while True:
-        reg_ex = (input('Please, provide valid regex: '))
+        reg_ex = str(input('Please, provide valid regex: '))
         try:
             reg = re.compile(reg_ex)
             is_valid = True
@@ -40,27 +40,15 @@ def get_valid_regex():
 # start script
 
 
-#dir_path = get_valid_directory_path_to_search()
-dir_path = os.path.join('D:\\','PythonLearn','PythonLearning','test')
+dir_path = get_valid_directory_path_to_search()
+
 files_list = get_list_of_the_files_in_given_directory(dir_path)
 
-
-##
-pattern = re.compile(r'''(
-        (\+\d{0,2}|00[0-9]{0,2})?     # area code
-        (\s|-|\.)?                    # separator
-        \d{3}                         # first 3 digits
-        (\s|-|\.)?                    # separator
-        \d{3}                         # second 3 digits
-        (\s|-|\.)?                    # separator
-        \d{3}                         # last 3 digits
-        )''', re.VERBOSE)
-## '(\+\d{0,2}|00[0-9]{0,2})?(\s|-|\.)?\d{3}(\s|-|\.)?\d{3}(\s|-|\.)?\d{3}'
-
 pattern = get_valid_regex()
+
 for file in files_list:
     file_path = os.path.join(dir_path, file)
     file_itself = open(file_path,'r')
     file_content = file_itself.read()
     for match in re.finditer(pattern, file_content):
-        print('Found on line: {}'.format(match.group()))
+        print('Found in file: {} match: {}'.format(file, match.group()))
