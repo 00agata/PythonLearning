@@ -1,0 +1,13 @@
+[
+  "Lesson4/test_distance.py::test_distance_type_error_for_none_value", 
+  "Lesson4/test_distance.py::test_distance_type_error", 
+  "Lesson4/test_distance.py::test_distance_value_error", 
+  "Lesson4/test_distance.py::test_input_values", 
+  "Lesson4/test_fibonacci_numbers.py::test_fibonacci_type_error", 
+  "Lesson4/test_fibonacci_numbers.py::test_fibonacci_type_error2", 
+  "Lesson4/test_fibonacci_numbers.py::test_fibonacci_value_error", 
+  "Lesson4/test_fibonacci_numbers.py::test_input_values", 
+  "Lesson5/test_Lesson5.py::TestCommaCode::test_if_expected_exception_None", 
+  "Lesson5/test_Lesson5.py::TestCommaCode::test_if_expected_exception_int", 
+  "Lesson5/test_Lesson5.py::TestCommaCode::test_if_expected_exception_one_string"
+]
