@@ -2,13 +2,11 @@ import unittest
 
 
 def collatz_function(number):
-    if type(number) == int:
-        if number % 2 == 0:
-            return number
-        else:
-            return 3 * number + 1
-    else:
+    if type(number) != int:
         raise TypeError
+    if number % 2 == 0:
+        return number
+    return 3 * number + 1
 
 
 class MyTest(unittest.TestCase):

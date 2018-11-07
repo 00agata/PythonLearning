@@ -14,4 +14,4 @@ x2 = float(input('x2: '))
 y1 = float(input('y1: '))
 y2 = float(input('y2: '))
 
-print('{0:4.2f}'.format(distance(x1, x2, y1, y2), ))
+print('{0:.2f}'.format(distance(x1, x2, y1, y2), ))
