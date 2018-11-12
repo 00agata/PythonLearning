@@ -3,14 +3,9 @@ import unittest
 
 # function to be tested - from Lesson3
 def collatz(number):
-    result = 0
     if number % 2 == 0:
-        result = number // 2
-        return result
-
-    else:
-        result = 3 * number + 1
-        return result
+        return number // 2
+    return 3 * number + 1
 
 
 class TestCollatz(unittest.TestCase):
@@ -26,7 +21,3 @@ class TestCollatz(unittest.TestCase):
               'is not a number')
         with self.assertRaises(TypeError):
             collatz('aoeu')
-
-
-if __name__ == '__main__':
-    unittest.main()
