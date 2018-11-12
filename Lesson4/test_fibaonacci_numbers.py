@@ -8,7 +8,7 @@ def fib(n):
     if n is not None:
         if type(n) == int:
             if n == 0:
-                return 1
+                return 0
             if n == 1:
                 return 1
             elif 1 < n <= 1000:
@@ -40,7 +40,7 @@ def test_fibonacci_value_error():
 
 def test_input_values():
     print('Test 0')
-    assert fib(0) == 1
+    assert fib(0) == 0
     print('Test 1')
     assert fib(1) == 1
     print('Test 2')
