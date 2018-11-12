@@ -40,7 +40,7 @@ def test_fibonacci_value_error():
 
 def test_input_values():
     print('Test 0')
-    assert fib(0) == 0
+    assert fib(0) == 1
     print('Test 1')
     assert fib(1) == 1
     print('Test 2')
