@@ -1,0 +1,10 @@
+[
+  "Lesson4/test_distance.py::test_distance_type_error_for_none_value", 
+  "Lesson4/test_distance.py::test_distance_type_error", 
+  "Lesson4/test_distance.py::test_distance_value_error", 
+  "Lesson4/test_distance.py::test_input_values", 
+  "Lesson4/test_fibaonacci_numbers.py::test_fibonacci_type_error", 
+  "Lesson4/test_fibaonacci_numbers.py::test_fibonacci_type_error2", 
+  "Lesson4/test_fibaonacci_numbers.py::test_fibonacci_value_error", 
+  "Lesson4/test_fibaonacci_numbers.py::test_input_values"
+]
