@@ -32,12 +32,12 @@ grid = [['.', '.', '.', '.', '.', '.'],
         ['.', '.', '.', '.', '.', '.']]
 
 
-def graphics_printer(grid):
-    for i in range(0, 9):
-        for j in range(0, 6):
-            print grid[i][j],
-            if j == 5:
-                print '\n'
+def graphics_printer(sample_grid):
+    for i in range(0, 6):
+        for j in range(0, 9):
+            print(sample_grid[j][i], end='')
+            if j == 8:
+                print('\n')
 
 
 graphics_printer(grid)
