@@ -20,3 +20,18 @@ while True:
     if num % 10 == 0 and num >= 0:
         break;
 reverse_sequence(num)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
